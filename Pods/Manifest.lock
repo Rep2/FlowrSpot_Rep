@@ -1,11 +1,11 @@
 PODS:
-  - Alamofire (4.6.0)
+  - Alamofire (4.7.2)
   - Kingfisher (4.8.0)
   - SnapKit (4.0.0)
   - SwiftLint (0.24.2)
 
 DEPENDENCIES:
-  - Alamofire
+  - Alamofire (~> 4.7)
   - Kingfisher (~> 4.8)
   - SnapKit (~> 4.0.0)
   - SwiftLint
@@ -18,11 +18,11 @@ SPEC REPOS:
     - SwiftLint
 
 SPEC CHECKSUMS:
-  Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
+  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
   Kingfisher: 976d828df2b24834c6a3f2fc4d82cdbd26552be1
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SwiftLint: 2aa21b96c8d13396a051bc1cb659d2ce1e0075b0
 
-PODFILE CHECKSUM: 9a8c8b4f8f35b3aad07e46d59b4155aba7562e52
+PODFILE CHECKSUM: 95268e5dcbb813b29c43d303c4f4d899822bc393
 
 COCOAPODS: 1.5.0
