@@ -7,7 +7,7 @@ target 'FlowrSpot' do
   
   pod 'Alamofire'
   pod 'SnapKit', '~> 4.0.0'
-  pod 'Kingfisher', '~> 4.0'
+  pod 'Kingfisher', '~> 4.8'
   pod 'SwiftLint'
 
   # Pods for FlowrSpot
