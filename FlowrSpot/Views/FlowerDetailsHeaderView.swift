@@ -5,7 +5,7 @@ class FlowerDetailsHeaderView: UIView {
   private lazy var flowerImageView: UIImageView = {
     let imageView = UIImageView.autolayoutView()
 
-    imageView.contentMode = .scaleAspectFill
+    imageView.contentMode = .scaleAspectFit
 
     return imageView
   }()
@@ -13,10 +13,12 @@ class FlowerDetailsHeaderView: UIView {
   private lazy var flowerNameLabel: UILabel = {
     let label = UILabel.autolayoutView()
 
-    label.font = .custom(type: .regular, size: 24)
+    label.font = .custom(type: .regular, size: 34)
     label.textColor = .white
     label.textAlignment = .center
     label.numberOfLines = 0
+    label.shadowColor = UIColor.black.withAlphaComponent(0.8)
+    label.shadowOffset = CGSize(width: 0.5, height: 1)
 
     return label
   }()
