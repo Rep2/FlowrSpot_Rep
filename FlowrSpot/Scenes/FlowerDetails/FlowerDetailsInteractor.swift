@@ -5,7 +5,7 @@ protocol FlowerDetailsBusinessLogic {
 }
 
 class FlowerDetailsInteractor {
-  var presenter: HomePresentationLogic?
+  var presenter: FlowerDetailsPresentationLogic?
   var flowerDetailsWorker = FlowersDetailsWorker()
 }
 
@@ -13,7 +13,7 @@ class FlowerDetailsInteractor {
 extension FlowerDetailsInteractor: FlowerDetailsBusinessLogic {
   func fetchFlowerDetails(flowerId: Int) {
     flowerDetailsWorker.execute(flowerId: flowerId, success: { flowerDetails in
-      // TODO: - Implement logic
+      self.presenter?.presentFlowerDetails(flowerDetails)
     }, failure: { error in
       self.presenter?.presentFlowersError(error)
     })

@@ -84,6 +84,7 @@
 		F63131DE20C746470047958D /* HeaderViewScrollHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63131DD20C746470047958D /* HeaderViewScrollHandler.swift */; };
 		F63131E020C749370047958D /* FlowerDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63131DF20C749370047958D /* FlowerDetailsInteractor.swift */; };
 		F63131E220C74FDC0047958D /* FlowerDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63131E120C74FDC0047958D /* FlowerDetails.swift */; };
+		F63131E420C752780047958D /* FlowerDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63131E320C752780047958D /* FlowerDetailsPresenter.swift */; };
 		F631B4B120C6CAFB00129F67 /* FlowrSpotUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F631B4B020C6CAFB00129F67 /* FlowrSpotUITests.swift */; };
 		F631B4BA20C6CD9600129F67 /* Storable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F631B4B920C6CD9600129F67 /* Storable.framework */; };
 /* End PBXBuildFile section */
@@ -193,6 +194,7 @@
 		F63131DD20C746470047958D /* HeaderViewScrollHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewScrollHandler.swift; sourceTree = "<group>"; };
 		F63131DF20C749370047958D /* FlowerDetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowerDetailsInteractor.swift; sourceTree = "<group>"; };
 		F63131E120C74FDC0047958D /* FlowerDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowerDetails.swift; sourceTree = "<group>"; };
+		F63131E320C752780047958D /* FlowerDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowerDetailsPresenter.swift; sourceTree = "<group>"; };
 		F631B4AE20C6CAFB00129F67 /* FlowrSpotUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlowrSpotUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F631B4B020C6CAFB00129F67 /* FlowrSpotUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowrSpotUITests.swift; sourceTree = "<group>"; };
 		F631B4B220C6CAFC00129F67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -624,6 +626,7 @@
 			children = (
 				F63131D920C73C8D0047958D /* FlowerDetailsViewController.swift */,
 				F63131DF20C749370047958D /* FlowerDetailsInteractor.swift */,
+				F63131E320C752780047958D /* FlowerDetailsPresenter.swift */,
 			);
 			path = FlowerDetails;
 			sourceTree = "<group>";
@@ -952,6 +955,7 @@
 				37DFD32A2011E41C001023ED /* SearchView.swift in Sources */,
 				3787E6522015D3E90080A599 /* RemoteResourceError.swift in Sources */,
 				37DFD3282011E41C001023ED /* HomeHeaderView.swift in Sources */,
+				F63131E420C752780047958D /* FlowerDetailsPresenter.swift in Sources */,
 				3787E6412015D1420080A599 /* Constants.swift in Sources */,
 				F63131E220C74FDC0047958D /* FlowerDetails.swift in Sources */,
 				37B4196C200E06C600173B80 /* AppDelegate.swift in Sources */,

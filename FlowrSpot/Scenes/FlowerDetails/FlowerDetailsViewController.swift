@@ -1,5 +1,10 @@
 import UIKit
 
+protocol FlowerDetailsDisplayLogic: class {
+  func displayFlowerDetails(_ flowerDetails: FlowerDetails)
+  func displayError(_ error: RemoteResourceError)
+}
+
 class FlowerDetailsViewController: UIViewController {
   lazy var headerView: FlowerDetailsHeaderView = {
     let headerView = FlowerDetailsHeaderView.autolayoutView()
@@ -28,21 +33,18 @@ class FlowerDetailsViewController: UIViewController {
     return HeaderViewScrollHandler(headerViewHeight: self.headerViewHeight, headerView: self.headerView)
   }()
 
-  let flower: Flower
-
   let interactor: FlowerDetailsInteractor
 
   init(flower: Flower) {
-    self.flower = flower
-
     self.interactor = FlowerDetailsInteractor()
 
     super.init(nibName: nil, bundle: nil)
 
-    let presenter = HomePresenter()
+    let presenter = FlowerDetailsPresenter()
     interactor.presenter = presenter
+    presenter.viewController = self
 
-    loadData()
+    loadData(flower: flower)
   }
 
   required init?(coder aDecoder: NSCoder) {
@@ -65,8 +67,6 @@ extension FlowerDetailsViewController: UIStyling {
 
     view.addSubview(collectionView)
     view.addSubview(headerView)
-
-    headerView.present(flower: flower)
   }
 
   func setupConstraints() {
@@ -78,6 +78,21 @@ extension FlowerDetailsViewController: UIStyling {
     collectionView.snp.makeConstraints { (make) in
       make.edges.equalToSuperview()
     }
+  }
+}
+
+// MARK: - Display Logic
+extension FlowerDetailsViewController: FlowerDetailsDisplayLogic {
+  func displayFlowerDetails(_ flowerDetails: FlowerDetails) {
+//    flowersDataSource.update(flowers: flowers)
+//    collectionView.reloadData()
+//    emptyView.isHidden = true
+  }
+
+   func displayError(_ error: RemoteResourceError) {
+    let alert = UIAlertController(title: "general_error".localized(), message: error.localizedDescription, preferredStyle: .alert)
+    alert.addAction(UIAlertAction(title: "general_ok".localized(), style: .cancel, handler: nil))
+    present(alert, animated: true, completion: nil)
   }
 }
 
@@ -98,7 +113,7 @@ extension FlowerDetailsViewController: UICollectionViewDataSource {
 //    }
 
     let cell = collectionView.dequeueReusableCell(FlowerCollectionViewCell.self, at: indexPath)
-    cell.setFlower(flower)
+
 //    switch row {
 //    case let .flower(entity):
 //      cell.setFlower(entity)
@@ -121,7 +136,7 @@ extension FlowerDetailsViewController: UIScrollViewDelegate {
 
 // MARK: - Private Methods
 private extension FlowerDetailsViewController {
-  func loadData() {
+  func loadData(flower: Flower) {
     interactor.fetchFlowerDetails(flowerId: flower.id)
   }
 }
