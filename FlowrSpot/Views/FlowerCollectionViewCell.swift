@@ -10,26 +10,78 @@ import UIKit
 import Kingfisher
 
 class FlowerCollectionViewCell: UICollectionViewCell {
-  private let imageView = UIImageView.autolayoutView()
-  private let favoriteButton = UIButton.autolayoutView()
-  private let titleLabel = UILabel.autolayoutView()
-  private let subtitleLabel = UILabel.autolayoutView()
-  private let sightingsLabel = UILabel.autolayoutView()
-  private let sightingsLabelWrapperView = UIView.autolayoutView()
-  
-  override init(frame: CGRect) {
-    super.init(frame: frame)
-    setup()
-  }
-  
-  required init?(coder aDecoder: NSCoder) {
-    fatalError("init(coder:) has not been implemented")
-  }
+  private lazy var imageView: UIImageView = {
+    let imageView = UIImageView.autolayoutView()
+
+    imageView.kf.indicatorType = .activity
+    let gradientLayer = CAGradientLayer()
+    gradientLayer.frame = bounds
+    gradientLayer.colors = [UIColor.clear.cgColor, UIColor.black.cgColor]
+    gradientLayer.locations = [0.0, 1.0]
+    gradientLayer.opacity = 0.8
+    imageView.layer.addSublayer(gradientLayer)
+
+    return imageView
+  }()
+
+  private lazy var favoriteButton: UIButton = {
+    let button = UIButton.autolayoutView()
+
+    button.backgroundColor = .white
+    button.layer.cornerRadius = 12
+    button.setImage(#imageLiteral(resourceName: "favoritesIcons"), for: .normal)
+
+    return button
+  }()
+
+  private lazy var titleLabel: UILabel = {
+    let label = UILabel.autolayoutView()
+
+    label.font = .custom(type: .regular, size: 20)
+    label.textColor = .white
+    label.textAlignment = .center
+    label.numberOfLines = 2
+
+    return label
+  }()
+
+  private lazy var subtitleLabel: UILabel = {
+    let label = UILabel.autolayoutView()
+
+    label.font = .custom(type: .italic, size: 10)
+    label.textColor = .white
+    label.textAlignment = .center
+    label.alpha = 0.7
+
+    return label
+  }()
+
+  private lazy var sightingsLabel: UILabel = {
+    let label = UILabel.autolayoutView()
+
+    label.font = .custom(type: .regular, size: 10)
+    label.textColor = .white
+    label.textAlignment = .center
+
+    return label
+  }()
+
+  private lazy var sightingsLabelWrapperView: UIView = {
+    let view = UIView.autolayoutView()
+
+    view.backgroundColor = .black
+    view.alpha = 0.5
+    view.layer.cornerRadius = 12
+
+    return view
+  }()
 }
 
 // MARK: - Public methods
 extension FlowerCollectionViewCell {
   func setFlower(_ flower: Flower) {
+    setup()
+
     titleLabel.text = flower.name
     subtitleLabel.text = flower.latinName
     sightingsLabel.text = "sightings_count".localized(args: flower.sightings)
@@ -40,44 +92,17 @@ extension FlowerCollectionViewCell {
 // MARK: - ViewLifecycle
 extension FlowerCollectionViewCell: ViewLifecycle {
   func setupViews() {
+    guard layer.cornerRadius != 3 else { return }
+
     layer.masksToBounds = true
     layer.cornerRadius = 3
-    
+
     addSubview(imageView)
-    imageView.kf.indicatorType = .activity
-    let gradientLayer = CAGradientLayer()
-    gradientLayer.frame = bounds
-    gradientLayer.colors = [UIColor.clear.cgColor, UIColor.black.cgColor]
-    gradientLayer.locations = [0.0, 1.0]
-    gradientLayer.opacity = 0.8
-    imageView.layer.addSublayer(gradientLayer)
-    
     addSubview(titleLabel)
-    titleLabel.font = .custom(type: .regular, size: 20)
-    titleLabel.textColor = .white
-    titleLabel.textAlignment = .center
-    titleLabel.numberOfLines = 2
-    
     addSubview(subtitleLabel)
-    subtitleLabel.font = .custom(type: .italic, size: 10)
-    subtitleLabel.textColor = .white
-    subtitleLabel.textAlignment = .center
-    subtitleLabel.alpha = 0.7
-    
     addSubview(favoriteButton)
-    favoriteButton.backgroundColor = .white
-    favoriteButton.layer.cornerRadius = 12
-    favoriteButton.setImage(#imageLiteral(resourceName: "favoritesIcons"), for: .normal)
-    
-    addSubview(sightingsLabelWrapperView)
-    sightingsLabelWrapperView.backgroundColor = .black
-    sightingsLabelWrapperView.alpha = 0.5
-    sightingsLabelWrapperView.layer.cornerRadius = 12
-    
     addSubview(sightingsLabel)
-    sightingsLabel.font = .custom(type: .regular, size: 10)
-    sightingsLabel.textColor = .white
-    sightingsLabel.textAlignment = .center
+    addSubview(sightingsLabelWrapperView)
   }
   
   func setupConstraints() {
