@@ -1,0 +1,44 @@
+{
+  "flowers": [
+    {
+      "id": 1,
+      "name": "Goosefoot Violet",
+      "latin_name": "Viola purpurea 1",
+      "sightings": 1,
+      "profile_picture": "//flowrspot.s3.amazonaws.com/flowers/profile_pictures/000/000/001/medium/viola.jpg?1505132614",
+      "favorite": false
+    },
+    {
+      "id": 2,
+      "name": "Goosefoot Violet 2",
+      "latin_name": "Viola purpurea 2",
+      "sightings": 10,
+      "profile_picture": "//flowrspot.s3.amazonaws.com/flowers/profile_pictures/000/000/001/medium/viola.jpg?1505132614",
+      "favorite": true
+    },
+    {
+      "id": 3,
+      "name": "Goosefoot Violet 3",
+      "latin_name": "Viola purpurea 3",
+      "sightings": 50,
+      "profile_picture": "//flowrspot.s3.amazonaws.com/flowers/profile_pictures/000/000/001/medium/viola.jpg?1505132614",
+      "favorite": true
+    },
+    {
+      "id": 4,
+      "name": "Goosefoot Violet 4",
+      "latin_name": "Viola purpurea 4",
+      "sightings": 20,
+      "profile_picture": "//flowrspot.s3.amazonaws.com/flowers/profile_pictures/000/000/001/medium/viola.jpg?1505132614",
+      "favorite": true
+    },
+    {
+      "id": 5,
+      "name": "Goosefoot Violet 5",
+      "latin_name": "Viola purpurea 5",
+      "sightings": 30,
+      "profile_picture": "//flowrspot.s3.amazonaws.com/flowers/profile_pictures/000/000/001/medium/viola.jpg?1505132614",
+      "favorite": true
+    }
+  ]
+}
