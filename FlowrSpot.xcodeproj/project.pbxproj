@@ -79,6 +79,7 @@
 		99DC55B220160E1600E314D1 /* FlowersDownloaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DC55B120160E1600E314D1 /* FlowersDownloaderTests.swift */; };
 		CCE15402B8D583BCF3AEFA83 /* Pods_FlowrSpotTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A204BDDF3C1CBB61D85109E /* Pods_FlowrSpotTests.framework */; };
 		D0C76119D2322965786ED172 /* Pods_FlowrSpotUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6C85D08C668C1A95C1EC356 /* Pods_FlowrSpotUITests.framework */; };
+		F63131DA20C73C8D0047958D /* FlowerDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63131D920C73C8D0047958D /* FlowerDetailsViewController.swift */; };
 		F631B4B120C6CAFB00129F67 /* FlowrSpotUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F631B4B020C6CAFB00129F67 /* FlowrSpotUITests.swift */; };
 		F631B4BA20C6CD9600129F67 /* Storable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F631B4B920C6CD9600129F67 /* Storable.framework */; };
 /* End PBXBuildFile section */
@@ -183,6 +184,7 @@
 		B6C85D08C668C1A95C1EC356 /* Pods_FlowrSpotUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlowrSpotUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB4C0C7376DA407E1F7DB3B7 /* Pods-FlowrSpotUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlowrSpotUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlowrSpotUITests/Pods-FlowrSpotUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D7A200E65319AC91FE1C765B /* Pods-FlowrSpot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlowrSpot.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlowrSpot/Pods-FlowrSpot.release.xcconfig"; sourceTree = "<group>"; };
+		F63131D920C73C8D0047958D /* FlowerDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowerDetailsViewController.swift; sourceTree = "<group>"; };
 		F631B4AE20C6CAFB00129F67 /* FlowrSpotUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlowrSpotUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F631B4B020C6CAFB00129F67 /* FlowrSpotUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowrSpotUITests.swift; sourceTree = "<group>"; };
 		F631B4B220C6CAFC00129F67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -301,6 +303,7 @@
 		37603CE4201096C000FB9F78 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				F63131D820C73C290047958D /* FlowerDetails */,
 				3787E65B2015D4730080A599 /* Common */,
 				37DFD3482011E805001023ED /* Root */,
 				37F6090A2012220200087B53 /* Home */,
@@ -603,6 +606,14 @@
 				A1E1CA6CF1C3C23B89F93352 /* Pods-FlowrSpotUITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		F63131D820C73C290047958D /* FlowerDetails */ = {
+			isa = PBXGroup;
+			children = (
+				F63131D920C73C8D0047958D /* FlowerDetailsViewController.swift */,
+			);
+			path = FlowerDetails;
 			sourceTree = "<group>";
 		};
 		F631B4AF20C6CAFB00129F67 /* FlowrSpotUITests */ = {
@@ -932,6 +943,7 @@
 				3787E6552015D3E90080A599 /* Version.swift in Sources */,
 				37F6091B2012220200087B53 /* HomeViewController.swift in Sources */,
 				37F6091F2012220200087B53 /* FlowersDetailsWorker.swift in Sources */,
+				F63131DA20C73C8D0047958D /* FlowerDetailsViewController.swift in Sources */,
 				3787E65A2015D3E90080A599 /* Flower.swift in Sources */,
 				3787E6532015D3E90080A599 /* FlowerDetailsResponse.swift in Sources */,
 				3787E6592015D3E90080A599 /* FlowersDownloader.swift in Sources */,
