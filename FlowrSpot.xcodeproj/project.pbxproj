@@ -268,7 +268,6 @@
 		37603CDC2010966900FB9F78 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				3787E63B2015CC120080A599 /* Other */,
 				37603CE72010970F00FB9F78 /* Foundation */,
 				37603CE82010971400FB9F78 /* UIKit */,
 			);
@@ -339,13 +338,6 @@
 				37DFD3312011E48C001023ED /* UIView+Extra.swift */,
 			);
 			path = UIKit;
-			sourceTree = "<group>";
-		};
-		3787E63B2015CC120080A599 /* Other */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Other;
 			sourceTree = "<group>";
 		};
 		3787E6442015D3E90080A599 /* Errors */ = {
@@ -474,7 +466,6 @@
 			children = (
 				37603CDB2010965F00FB9F78 /* Utils */,
 				37603CDC2010966900FB9F78 /* Extensions */,
-				99E9048F2019EC9F00866BC2 /* Managers */,
 				37603CDE2010967C00FB9F78 /* Protocols */,
 				37603CE02010969100FB9F78 /* Network */,
 				37603CE4201096C000FB9F78 /* Scenes */,
@@ -599,13 +590,6 @@
 				3743C29E2016256200453B90 /* FlowersMapperTests.swift */,
 			);
 			path = Mappers;
-			sourceTree = "<group>";
-		};
-		99E9048F2019EC9F00866BC2 /* Managers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Managers;
 			sourceTree = "<group>";
 		};
 		AC5724D49C4732E5F540F485 /* Pods */ = {
