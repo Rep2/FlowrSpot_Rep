@@ -22,7 +22,6 @@
 		37603CEA2010975700FB9F78 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37603CE92010975700FB9F78 /* DataSource.swift */; };
 		37603CEC2010977100FB9F78 /* SectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37603CEB2010977100FB9F78 /* SectionType.swift */; };
 		37603CEE2010977F00FB9F78 /* RowType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37603CED2010977F00FB9F78 /* RowType.swift */; };
-		3787E63D2015CC680080A599 /* Mappable+Extra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3787E63C2015CC680080A599 /* Mappable+Extra.swift */; };
 		3787E6412015D1420080A599 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3787E6402015D1420080A599 /* Constants.swift */; };
 		3787E6432015D2880080A599 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3787E6422015D2880080A599 /* Logger.swift */; };
 		3787E6522015D3E90080A599 /* RemoteResourceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3787E6452015D3E90080A599 /* RemoteResourceError.swift */; };
@@ -81,6 +80,7 @@
 		CCE15402B8D583BCF3AEFA83 /* Pods_FlowrSpotTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A204BDDF3C1CBB61D85109E /* Pods_FlowrSpotTests.framework */; };
 		D0C76119D2322965786ED172 /* Pods_FlowrSpotUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6C85D08C668C1A95C1EC356 /* Pods_FlowrSpotUITests.framework */; };
 		F631B4B120C6CAFB00129F67 /* FlowrSpotUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F631B4B020C6CAFB00129F67 /* FlowrSpotUITests.swift */; };
+		F631B4BA20C6CD9600129F67 /* Storable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F631B4B920C6CD9600129F67 /* Storable.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,7 +116,6 @@
 		37603CE92010975700FB9F78 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		37603CEB2010977100FB9F78 /* SectionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionType.swift; sourceTree = "<group>"; };
 		37603CED2010977F00FB9F78 /* RowType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowType.swift; sourceTree = "<group>"; };
-		3787E63C2015CC680080A599 /* Mappable+Extra.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mappable+Extra.swift"; sourceTree = "<group>"; };
 		3787E6402015D1420080A599 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3787E6422015D2880080A599 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		3787E6452015D3E90080A599 /* RemoteResourceError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteResourceError.swift; sourceTree = "<group>"; };
@@ -187,6 +186,7 @@
 		F631B4AE20C6CAFB00129F67 /* FlowrSpotUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlowrSpotUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F631B4B020C6CAFB00129F67 /* FlowrSpotUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowrSpotUITests.swift; sourceTree = "<group>"; };
 		F631B4B220C6CAFC00129F67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F631B4B920C6CD9600129F67 /* Storable.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Storable.framework; path = Carthage/Build/iOS/Storable.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +195,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0666C4C0111DE138E68DF9F1 /* Pods_FlowrSpot.framework in Frameworks */,
+				F631B4BA20C6CD9600129F67 /* Storable.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,7 +344,6 @@
 		3787E63B2015CC120080A599 /* Other */ = {
 			isa = PBXGroup;
 			children = (
-				3787E63C2015CC680080A599 /* Mappable+Extra.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -559,6 +559,7 @@
 		97BDD1CA88FB2F2F86278369 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F631B4B920C6CD9600129F67 /* Storable.framework */,
 				63205463096CE6FBDF5D1415 /* Pods_FlowrSpot.framework */,
 				9A204BDDF3C1CBB61D85109E /* Pods_FlowrSpotTests.framework */,
 				B6C85D08C668C1A95C1EC356 /* Pods_FlowrSpotUITests.framework */,
@@ -643,6 +644,7 @@
 				C04847CDC8DA78B69378B6C2 /* [CP] Embed Pods Frameworks */,
 				37F609292012378300087B53 /* TODO|FIXME|NOTE */,
 				3787E6612015F39D0080A599 /* Swiftlint */,
+				F631B4B820C6CD4500129F67 /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -853,14 +855,12 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-FlowrSpot/Pods-FlowrSpot-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
-				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -885,6 +885,22 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		F631B4B820C6CD4500129F67 /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Storable.framework",
+			);
+			name = Carthage;
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Storable.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -936,7 +952,6 @@
 				3787E6532015D3E90080A599 /* FlowerDetailsResponse.swift in Sources */,
 				3787E6592015D3E90080A599 /* FlowersDownloader.swift in Sources */,
 				37F6091D2012220200087B53 /* FlowerRequests.swift in Sources */,
-				3787E63D2015CC680080A599 /* Mappable+Extra.swift in Sources */,
 				37603CEE2010977F00FB9F78 /* RowType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1093,6 +1108,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MDX989Y6D8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = FlowrSpot/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = povio.FlowrSpot;
@@ -1109,6 +1128,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MDX989Y6D8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = FlowrSpot/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = povio.FlowrSpot;

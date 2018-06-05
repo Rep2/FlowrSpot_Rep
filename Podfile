@@ -6,7 +6,6 @@ target 'FlowrSpot' do
   use_frameworks!
   
   pod 'Alamofire'
-  pod 'ObjectMapper'
   pod 'SnapKit', '~> 4.0.0'
   pod 'Kingfisher', '~> 4.0'
   pod 'SwiftLint'

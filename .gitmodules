@@ -1,0 +1,3 @@
+[submodule "Carthage/Checkouts/Storable"]
+	path = Carthage/Checkouts/Storable
+	url = https://github.com/Rep2/Storable.git

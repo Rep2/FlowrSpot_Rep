@@ -1,31 +1,21 @@
-//
-//  FlowerMode.swift
-//  FlowrSpot
-//
-//  Created by Toni Kocjan on 18/01/2018.
-//  Copyright © 2018 PovioLabs. All rights reserved.
-//
+struct FlowersResponse: Codable {
+  let flowers: [FlowerResponse]
+}
 
-import ObjectMapper
+struct FlowerResponse: Codable {
+  let id: Int
+  let name: String
+  let latinName: String
+  let sightings: Int
+  let profilePicture: String
+  let isFavorite: Bool
 
-class FlowerResponse: Mappable {
-  private(set) var id = -1
-  private(set) var name = ""
-  private(set) var latinName = ""
-  private(set) var sightings = -1
-  private(set) var profilePicture = ""
-  private(set) var isFavorite = false
-  
-  required convenience init(map: Map) {
-    self.init()
-  }
-  
-  func mapping(map: Map) {
-    id <- map["id"]
-    name <- map["name"]
-    latinName <- map["latin_name"]
-    sightings <- map["sightings"]
-    profilePicture <- map["profile_picture"]
-    isFavorite <- map["favorite"]
+  enum CodingKeys: String, CodingKey {
+    case id
+    case name
+    case latinName = "latin_name"
+    case sightings
+    case profilePicture = "profile_picture"
+    case isFavorite = "favorite"
   }
 }

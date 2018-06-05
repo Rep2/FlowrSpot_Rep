@@ -9,24 +9,25 @@
 import Alamofire
 
 struct RestClient {
-  
-  typealias JSON = [String: Any]
+
   typealias SuccessCompletion<T> = ((T) -> Void)?
   typealias FailureCompletion = ((RemoteResourceError) -> Void)?
 
   static let shared = RestClient()
   
-  func request(_ request: Request, version: Version, success: SuccessCompletion<JSON>, failure: FailureCompletion) {
+  func request(_ request: Request, version: Version, success: SuccessCompletion<Data>, failure: FailureCompletion) {
     let request = prepareRequest(request, host: host, version: version)
     request.validate().response { (response) in
       do {
         try self.validateResponse(response)
-        var json = JSON()
-        if let data = response.data, let responseJson = try self.serializeToJson(data: data) {
-          json = responseJson
+
+        guard let data = response.data else {
+          failure?(RemoteResourceError.invalidResponse)
+
+          return
         }
-        
-        success?(json)
+
+        success?(data)
       } catch {
         let responseError = error as? RemoteResourceError ?? RemoteResourceError.generic
         failure?(responseError)
@@ -66,11 +67,7 @@ private extension RestClient {
       break
     }
   }
-  
-  func serializeToJson(data: Data) throws -> JSON? {
-    return try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
-  }
-  
+
   var host: Host {
     return Constants.Environment.isProduction ? .production : .development
   }
