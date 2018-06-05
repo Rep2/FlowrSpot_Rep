@@ -15,12 +15,12 @@ final class FlowersDownloader {
   }
   
   func fetchFlowerDetails(flowerId: Int, success: RestClient.SuccessCompletion<FlowerDetailsResponse>, failure: RestClient.FailureCompletion) {
-    RestClient.shared.request(FlowerRequests.flowerDetails(flowerid: flowerId), version: .v1, success: { (json) in
+//    RestClient.shared.request(FlowerRequests.flowerDetails(flowerid: flowerId), version: .v1, success: { (json) in
 //      if let flowerDetails = FlowerDetailsResponse.parse(json, key: "flower") {
 //        success?(flowerDetails)
 //      } else {
 //        failure?(RemoteResourceError.invalidJson)
 //      }
-    }, failure: failure)
+//    }, failure: failure)
   }
 }
