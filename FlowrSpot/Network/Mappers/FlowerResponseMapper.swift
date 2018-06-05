@@ -10,10 +10,13 @@ import Foundation
 
 final class FlowerResponseMapper: ResponseMapper {
   static func transform(response: FlowerResponse) -> Flower? {
-    return Flower(name: response.name,
-                  latinName: response.latinName,
-                  sightings: response.sightings,
-                  url: "http:" + response.profilePicture,
-                  isFavorite: response.isFavorite)
+    return Flower(
+      id: response.id,
+      name: response.name,
+      latinName: response.latinName,
+      sightings: response.sightings,
+      url: "http:" + response.profilePicture,
+      isFavorite: response.isFavorite
+    )
   }
 }

@@ -30,10 +30,19 @@ class FlowerDetailsViewController: UIViewController {
 
   let flower: Flower
 
+  let interactor: FlowerDetailsInteractor
+
   init(flower: Flower) {
     self.flower = flower
 
+    self.interactor = FlowerDetailsInteractor()
+
     super.init(nibName: nil, bundle: nil)
+
+    let presenter = HomePresenter()
+    interactor.presenter = presenter
+
+    loadData()
   }
 
   required init?(coder aDecoder: NSCoder) {
@@ -107,5 +116,12 @@ extension FlowerDetailsViewController: UICollectionViewDelegate, UICollectionVie
 extension FlowerDetailsViewController: UIScrollViewDelegate {
   func scrollViewDidScroll(_ scrollView: UIScrollView) {
     headerViewScrollHandler.scrollViewDidScroll(scrollView)
+  }
+}
+
+// MARK: - Private Methods
+private extension FlowerDetailsViewController {
+  func loadData() {
+    interactor.fetchFlowerDetails(flowerId: flower.id)
   }
 }

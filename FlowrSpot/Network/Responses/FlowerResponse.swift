@@ -10,7 +10,7 @@ struct FlowerResponse: Codable {
   let profilePicture: String
   let isFavorite: Bool
 
-  enum CodingKeys: String, CodingKey {
+  private enum CodingKeys: String, CodingKey {
     case id
     case name
     case latinName = "latin_name"

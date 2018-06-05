@@ -9,6 +9,7 @@
 import Foundation
 
 struct Flower {
+  let id: Int
   let name: String
   let latinName: String
   let sightings: Int
