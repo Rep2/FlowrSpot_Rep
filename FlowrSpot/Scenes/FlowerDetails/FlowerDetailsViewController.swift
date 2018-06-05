@@ -9,7 +9,20 @@ class FlowerDetailsViewController: UIViewController {
     return headerView
   }()
 
-  let headerViewHeight = 255
+  let headerViewHeight: CGFloat = 255
+
+  private lazy var collectionView: UICollectionView = {
+    let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).autoLayoutView()
+
+    collectionView.backgroundColor = .white
+    collectionView.keyboardDismissMode = .onDrag
+    collectionView.delegate = self
+    collectionView.dataSource = self
+    collectionView.contentInset = UIEdgeInsets(top: self.headerViewHeight, left: 0, bottom: 0, right: 0)
+    collectionView.register(FlowerCollectionViewCell.self)
+
+    return collectionView
+  }()
 
   let flower: Flower
 
@@ -37,6 +50,7 @@ extension FlowerDetailsViewController: UIStyling {
     
     title = NSLocalizedString("Flower details", comment: "Flower details screen title")
 
+    view.addSubview(collectionView)
     view.addSubview(headerView)
 
     headerView.present(flower: flower)
@@ -47,5 +61,56 @@ extension FlowerDetailsViewController: UIStyling {
       make.leading.top.trailing.equalToSuperview()
       make.height.equalTo(headerViewHeight)
     }
+
+    collectionView.snp.makeConstraints { (make) in
+      make.edges.equalToSuperview()
+    }
+  }
+}
+
+// MARK: - UICollectionView DataSource
+extension FlowerDetailsViewController: UICollectionViewDataSource {
+  func numberOfSections(in collectionView: UICollectionView) -> Int {
+    return 1//flowersDataSource.numberOfSections()
+  }
+
+  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    return 320//flowersDataSource.numberOfRows(in: section)
+  }
+
+  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//    guard let row = flowersDataSource.row(at: indexPath) else {
+//      Logger.error("No availible row in dataSource at \(indexPath)")
+//      return UICollectionViewCell()
+//    }
+
+    let cell = collectionView.dequeueReusableCell(FlowerCollectionViewCell.self, at: indexPath)
+    cell.setFlower(flower)
+//    switch row {
+//    case let .flower(entity):
+//      cell.setFlower(entity)
+//    }
+    return cell
+  }
+}
+
+// MARK: - UICollectionView Delegate
+extension FlowerDetailsViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+
+}
+
+// MARK: - UIScrollView Delegate
+extension FlowerDetailsViewController: UIScrollViewDelegate {
+  func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    let contentOffset = -scrollView.contentOffset.y
+
+    let percentage = 1 - (contentOffset / headerViewHeight)
+
+    var headerViewTranslation = -percentage * headerViewHeight
+    if headerViewTranslation > 0 {
+      headerViewTranslation = 0 // lock headerView
+    }
+
+    headerView.transform = CGAffineTransform.identity.translatedBy(x: 0, y: headerViewTranslation)
   }
 }
