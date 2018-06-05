@@ -1,4 +1,3 @@
-# Uncomment the next line to define a global platform for your project
 platform :ios, '10.0'
 
 target 'FlowrSpot' do
@@ -10,16 +9,14 @@ target 'FlowrSpot' do
   pod 'Kingfisher', '~> 4.8'
   pod 'SwiftLint', '~> 0.25'
 
-  # Pods for FlowrSpot
+  plugin 'cocoapods-wholemodule'
 
   target 'FlowrSpotTests' do
     inherit! :search_paths
-    # Pods for testing
   end
 
   target 'FlowrSpotUITests' do
     inherit! :search_paths
-    # Pods for testing
   end
 
 end
