@@ -80,6 +80,7 @@
 		CCE15402B8D583BCF3AEFA83 /* Pods_FlowrSpotTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A204BDDF3C1CBB61D85109E /* Pods_FlowrSpotTests.framework */; };
 		D0C76119D2322965786ED172 /* Pods_FlowrSpotUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6C85D08C668C1A95C1EC356 /* Pods_FlowrSpotUITests.framework */; };
 		F63131DA20C73C8D0047958D /* FlowerDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63131D920C73C8D0047958D /* FlowerDetailsViewController.swift */; };
+		F63131DC20C7404C0047958D /* FlowerDetailsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63131DB20C7404C0047958D /* FlowerDetailsHeaderView.swift */; };
 		F631B4B120C6CAFB00129F67 /* FlowrSpotUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F631B4B020C6CAFB00129F67 /* FlowrSpotUITests.swift */; };
 		F631B4BA20C6CD9600129F67 /* Storable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F631B4B920C6CD9600129F67 /* Storable.framework */; };
 /* End PBXBuildFile section */
@@ -185,6 +186,7 @@
 		BB4C0C7376DA407E1F7DB3B7 /* Pods-FlowrSpotUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlowrSpotUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlowrSpotUITests/Pods-FlowrSpotUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D7A200E65319AC91FE1C765B /* Pods-FlowrSpot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlowrSpot.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlowrSpot/Pods-FlowrSpot.release.xcconfig"; sourceTree = "<group>"; };
 		F63131D920C73C8D0047958D /* FlowerDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowerDetailsViewController.swift; sourceTree = "<group>"; };
+		F63131DB20C7404C0047958D /* FlowerDetailsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowerDetailsHeaderView.swift; sourceTree = "<group>"; };
 		F631B4AE20C6CAFB00129F67 /* FlowrSpotUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlowrSpotUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F631B4B020C6CAFB00129F67 /* FlowrSpotUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowrSpotUITests.swift; sourceTree = "<group>"; };
 		F631B4B220C6CAFC00129F67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -318,6 +320,7 @@
 				37DFD3242011E41C001023ED /* HomeHeaderView.swift */,
 				37DFD3262011E41C001023ED /* SearchView.swift */,
 				373597C7201B2D570000CA57 /* EmptyView.swift */,
+				F63131DB20C7404C0047958D /* FlowerDetailsHeaderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -907,6 +910,7 @@
 				3787E6542015D3E90080A599 /* FlowerResponse.swift in Sources */,
 				37F609192012220200087B53 /* HomeInteractor.swift in Sources */,
 				37F6091A2012220200087B53 /* FlowerCollectionViewItemDimenson.swift in Sources */,
+				F63131DC20C7404C0047958D /* FlowerDetailsHeaderView.swift in Sources */,
 				37F609182012220200087B53 /* FlowersDataSource.swift in Sources */,
 				37DFD34E2011E817001023ED /* RootTabViewController.swift in Sources */,
 				3787E6602015EFC20080A599 /* FlowerResponseMapper.swift in Sources */,
