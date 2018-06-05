@@ -92,7 +92,7 @@ extension FlowerCollectionViewCell {
 // MARK: - ViewLifecycle
 extension FlowerCollectionViewCell: ViewLifecycle {
   func setupViews() {
-    guard layer.cornerRadius != 3 else { return }
+    guard imageView.superview == nil else { return }
 
     layer.masksToBounds = true
     layer.cornerRadius = 3
