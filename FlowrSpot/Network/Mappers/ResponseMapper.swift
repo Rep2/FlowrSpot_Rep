@@ -20,6 +20,6 @@ protocol ResponseMapper {
 
 extension ResponseMapper {
   static func map(response: [T]) -> [U] {
-    return response.flatMap(transform)
+    return response.compactMap(transform)
   }
 }
