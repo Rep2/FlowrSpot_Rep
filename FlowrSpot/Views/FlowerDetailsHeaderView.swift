@@ -20,6 +20,11 @@ class FlowerDetailsHeaderView: UIView {
 
     return label
   }()
+
+  func present(flower: Flower) {
+    flowerNameLabel.text = flower.name
+    flowerImageView.kf.setImage(with: URL(string: flower.url))
+  }
 }
 
 // MARK: - ViewLifecycle
