@@ -25,7 +25,7 @@ extension NavigationViewController: UIStyling {
                                          NSAttributedStringKey.foregroundColor: UIColor.flowrPink]
     navigationBar.setBackgroundImage(UIImage(), for: .top, barMetrics: .default)
     navigationBar.shadowImage = UIImage()
-    navigationBar.tintColor = .flowrPink
+    navigationBar.tintColor = .lightGray
     navigationBar.layer.masksToBounds = false
     
     let backgroundColor = UIColor.white
