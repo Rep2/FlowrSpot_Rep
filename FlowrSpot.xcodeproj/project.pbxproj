@@ -81,6 +81,7 @@
 		D0C76119D2322965786ED172 /* Pods_FlowrSpotUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6C85D08C668C1A95C1EC356 /* Pods_FlowrSpotUITests.framework */; };
 		F63131DA20C73C8D0047958D /* FlowerDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63131D920C73C8D0047958D /* FlowerDetailsViewController.swift */; };
 		F63131DC20C7404C0047958D /* FlowerDetailsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63131DB20C7404C0047958D /* FlowerDetailsHeaderView.swift */; };
+		F63131DE20C746470047958D /* HeaderViewScrollHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63131DD20C746470047958D /* HeaderViewScrollHandler.swift */; };
 		F631B4B120C6CAFB00129F67 /* FlowrSpotUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F631B4B020C6CAFB00129F67 /* FlowrSpotUITests.swift */; };
 		F631B4BA20C6CD9600129F67 /* Storable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F631B4B920C6CD9600129F67 /* Storable.framework */; };
 /* End PBXBuildFile section */
@@ -187,6 +188,7 @@
 		D7A200E65319AC91FE1C765B /* Pods-FlowrSpot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlowrSpot.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlowrSpot/Pods-FlowrSpot.release.xcconfig"; sourceTree = "<group>"; };
 		F63131D920C73C8D0047958D /* FlowerDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowerDetailsViewController.swift; sourceTree = "<group>"; };
 		F63131DB20C7404C0047958D /* FlowerDetailsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowerDetailsHeaderView.swift; sourceTree = "<group>"; };
+		F63131DD20C746470047958D /* HeaderViewScrollHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewScrollHandler.swift; sourceTree = "<group>"; };
 		F631B4AE20C6CAFB00129F67 /* FlowrSpotUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlowrSpotUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F631B4B020C6CAFB00129F67 /* FlowrSpotUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowrSpotUITests.swift; sourceTree = "<group>"; };
 		F631B4B220C6CAFC00129F67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -394,6 +396,7 @@
 			isa = PBXGroup;
 			children = (
 				37892D7F200F38A600BB8259 /* NavigationViewController.swift */,
+				F63131DD20C746470047958D /* HeaderViewScrollHandler.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -924,6 +927,7 @@
 				37DFD33C2011E48D001023ED /* UIColor+Extra.swift in Sources */,
 				37DFD3392011E48D001023ED /* UIFont+Extra.swift in Sources */,
 				37603CEC2010977100FB9F78 /* SectionType.swift in Sources */,
+				F63131DE20C746470047958D /* HeaderViewScrollHandler.swift in Sources */,
 				37892D77200E82C200BB8259 /* ViewLifecycle.swift in Sources */,
 				37F609202012220200087B53 /* HomePresenter.swift in Sources */,
 				374D96DE200E169A00FC6695 /* UIStyling.swift in Sources */,

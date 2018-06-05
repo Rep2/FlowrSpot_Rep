@@ -24,6 +24,10 @@ class FlowerDetailsViewController: UIViewController {
     return collectionView
   }()
 
+  private lazy var headerViewScrollHandler: HeaderViewScrollHandler = {
+    return HeaderViewScrollHandler(headerViewHeight: self.headerViewHeight, headerView: self.headerView)
+  }()
+
   let flower: Flower
 
   init(flower: Flower) {
@@ -102,15 +106,6 @@ extension FlowerDetailsViewController: UICollectionViewDelegate, UICollectionVie
 // MARK: - UIScrollView Delegate
 extension FlowerDetailsViewController: UIScrollViewDelegate {
   func scrollViewDidScroll(_ scrollView: UIScrollView) {
-    let contentOffset = -scrollView.contentOffset.y
-
-    let percentage = 1 - (contentOffset / headerViewHeight)
-
-    var headerViewTranslation = -percentage * headerViewHeight
-    if headerViewTranslation > 0 {
-      headerViewTranslation = 0 // lock headerView
-    }
-
-    headerView.transform = CGAffineTransform.identity.translatedBy(x: 0, y: headerViewTranslation)
+    headerViewScrollHandler.scrollViewDidScroll(scrollView)
   }
 }

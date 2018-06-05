@@ -23,6 +23,10 @@ class HomeViewController: UIViewController {
   private let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).autoLayoutView()
   private let rightBarButton = UIButton(type: .custom)
   private let emptyView = EmptyView.autolayoutView()
+
+  private lazy var headerViewScrollHandler: HeaderViewScrollHandler = {
+    return HeaderViewScrollHandler(headerViewHeight: self.headerViewHeight, headerView: self.headerView)
+  }()
   
   init(delegate: HomeRouterDelegate?) {
     super.init(nibName: nil, bundle: nil)
@@ -159,17 +163,11 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDelegate
 // MARK: - UIScrollView Delegate
 extension HomeViewController: UIScrollViewDelegate {
   func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    headerViewScrollHandler.scrollViewDidScroll(scrollView)
+
     let contentOffset = -scrollView.contentOffset.y
-    
     let percentage = 1 - (contentOffset / headerViewHeight)
-    
-    var headerViewTranslation = -percentage * headerViewHeight
-    if headerViewTranslation > 0 {
-      headerViewTranslation = 0 // lock headerView
-    }
-    
-    headerView.transform = CGAffineTransform.identity.translatedBy(x: 0, y: headerViewTranslation)
-    
+
     if percentage > 0.75 {
       showSearchButton()
     } else {
