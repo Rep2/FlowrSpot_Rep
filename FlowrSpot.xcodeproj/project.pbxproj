@@ -79,10 +79,19 @@
 		99DC55A92015FA7700E314D1 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 99DC55A82015FA7700E314D1 /* .swiftlint.yml */; };
 		99DC55B220160E1600E314D1 /* FlowersDownloaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DC55B120160E1600E314D1 /* FlowersDownloaderTests.swift */; };
 		CCE15402B8D583BCF3AEFA83 /* Pods_FlowrSpotTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A204BDDF3C1CBB61D85109E /* Pods_FlowrSpotTests.framework */; };
+		D0C76119D2322965786ED172 /* Pods_FlowrSpotUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6C85D08C668C1A95C1EC356 /* Pods_FlowrSpotUITests.framework */; };
+		F631B4B120C6CAFB00129F67 /* FlowrSpotUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F631B4B020C6CAFB00129F67 /* FlowrSpotUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		37B4197D200E06C700173B80 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 37B41960200E06C600173B80 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 37B41967200E06C600173B80;
+			remoteInfo = FlowrSpot;
+		};
+		F631B4B320C6CAFC00129F67 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 37B41960200E06C600173B80 /* Project object */;
 			proxyType = 1;
@@ -175,6 +184,9 @@
 		B6C85D08C668C1A95C1EC356 /* Pods_FlowrSpotUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlowrSpotUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB4C0C7376DA407E1F7DB3B7 /* Pods-FlowrSpotUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlowrSpotUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlowrSpotUITests/Pods-FlowrSpotUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D7A200E65319AC91FE1C765B /* Pods-FlowrSpot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlowrSpot.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlowrSpot/Pods-FlowrSpot.release.xcconfig"; sourceTree = "<group>"; };
+		F631B4AE20C6CAFB00129F67 /* FlowrSpotUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlowrSpotUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F631B4B020C6CAFB00129F67 /* FlowrSpotUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowrSpotUITests.swift; sourceTree = "<group>"; };
+		F631B4B220C6CAFC00129F67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +203,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCE15402B8D583BCF3AEFA83 /* Pods_FlowrSpotTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F631B4AB20C6CAFB00129F67 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0C76119D2322965786ED172 /* Pods_FlowrSpotUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,6 +452,7 @@
 			children = (
 				37B4196A200E06C600173B80 /* FlowrSpot */,
 				3743C2762016049600453B90 /* FlowrSpotTests */,
+				F631B4AF20C6CAFB00129F67 /* FlowrSpotUITests */,
 				37B41969200E06C600173B80 /* Products */,
 				AC5724D49C4732E5F540F485 /* Pods */,
 				97BDD1CA88FB2F2F86278369 /* Frameworks */,
@@ -443,6 +464,7 @@
 			children = (
 				37B41968200E06C600173B80 /* FlowrSpot.app */,
 				37B4197C200E06C700173B80 /* FlowrSpotTests.xctest */,
+				F631B4AE20C6CAFB00129F67 /* FlowrSpotUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -598,6 +620,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		F631B4AF20C6CAFB00129F67 /* FlowrSpotUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F631B4B020C6CAFB00129F67 /* FlowrSpotUITests.swift */,
+				F631B4B220C6CAFC00129F67 /* Info.plist */,
+			);
+			path = FlowrSpotUITests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -610,7 +641,6 @@
 				37B41965200E06C600173B80 /* Frameworks */,
 				37B41966200E06C600173B80 /* Resources */,
 				C04847CDC8DA78B69378B6C2 /* [CP] Embed Pods Frameworks */,
-				A94F1C6BFA8E74097CC1EEBB /* [CP] Copy Pods Resources */,
 				37F609292012378300087B53 /* TODO|FIXME|NOTE */,
 				3787E6612015F39D0080A599 /* Swiftlint */,
 			);
@@ -631,8 +661,6 @@
 				37B41978200E06C700173B80 /* Sources */,
 				37B41979200E06C700173B80 /* Frameworks */,
 				37B4197A200E06C700173B80 /* Resources */,
-				5302214015650A5B6FB90B68 /* [CP] Embed Pods Frameworks */,
-				A69BBC477C8FDDB1C5392A26 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -644,13 +672,32 @@
 			productReference = 37B4197C200E06C700173B80 /* FlowrSpotTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		F631B4AD20C6CAFB00129F67 /* FlowrSpotUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F631B4B520C6CAFC00129F67 /* Build configuration list for PBXNativeTarget "FlowrSpotUITests" */;
+			buildPhases = (
+				DC46B98622C9A7F4E2C3CC5C /* [CP] Check Pods Manifest.lock */,
+				F631B4AA20C6CAFB00129F67 /* Sources */,
+				F631B4AB20C6CAFB00129F67 /* Frameworks */,
+				F631B4AC20C6CAFB00129F67 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F631B4B420C6CAFC00129F67 /* PBXTargetDependency */,
+			);
+			name = FlowrSpotUITests;
+			productName = FlowrSpotUITests;
+			productReference = F631B4AE20C6CAFB00129F67 /* FlowrSpotUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		37B41960200E06C600173B80 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0920;
+				LastSwiftUpdateCheck = 0940;
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = PovioLabs;
 				TargetAttributes = {
@@ -660,6 +707,11 @@
 					};
 					37B4197B200E06C700173B80 = {
 						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 37B41967200E06C600173B80;
+					};
+					F631B4AD20C6CAFB00129F67 = {
+						CreatedOnToolsVersion = 9.4;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 37B41967200E06C600173B80;
 					};
@@ -680,6 +732,7 @@
 			targets = (
 				37B41967200E06C600173B80 /* FlowrSpot */,
 				37B4197B200E06C700173B80 /* FlowrSpotTests */,
+				F631B4AD20C6CAFB00129F67 /* FlowrSpotUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -714,6 +767,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				372E5A862019E164002839CC /* flowers.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F631B4AC20C6CAFB00129F67 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -784,51 +844,6 @@
 			shellPath = /bin/sh;
 			shellScript = "TAGS=\"TODO:|FIXME:|NOTE:\"\necho \"searching ${SRCROOT} for ${TAGS}\"\nfind \"${SRCROOT}\" \\( -name \"*.swift\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($TAGS).*\\$\" | perl -p -e \"s/($TAGS)/ warning: \\$1/\"";
 		};
-		5302214015650A5B6FB90B68 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FlowrSpotTests/Pods-FlowrSpotTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A69BBC477C8FDDB1C5392A26 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FlowrSpotTests/Pods-FlowrSpotTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A94F1C6BFA8E74097CC1EEBB /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FlowrSpot/Pods-FlowrSpot-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		C04847CDC8DA78B69378B6C2 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -851,6 +866,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FlowrSpot/Pods-FlowrSpot-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DC46B98622C9A7F4E2C3CC5C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FlowrSpotUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -922,6 +955,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F631B4AA20C6CAFB00129F67 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F631B4B120C6CAFB00129F67 /* FlowrSpotUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -929,6 +970,11 @@
 			isa = PBXTargetDependency;
 			target = 37B41967200E06C600173B80 /* FlowrSpot */;
 			targetProxy = 37B4197D200E06C700173B80 /* PBXContainerItemProxy */;
+		};
+		F631B4B420C6CAFC00129F67 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 37B41967200E06C600173B80 /* FlowrSpot */;
+			targetProxy = F631B4B320C6CAFC00129F67 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1046,7 +1092,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = T634YNT6FE;
+				DEVELOPMENT_TEAM = MDX989Y6D8;
 				INFOPLIST_FILE = FlowrSpot/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = povio.FlowrSpot;
@@ -1062,7 +1108,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = T634YNT6FE;
+				DEVELOPMENT_TEAM = MDX989Y6D8;
 				INFOPLIST_FILE = FlowrSpot/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = povio.FlowrSpot;
@@ -1108,6 +1154,46 @@
 			};
 			name = Release;
 		};
+		F631B4B620C6CAFC00129F67 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BB4C0C7376DA407E1F7DB3B7 /* Pods-FlowrSpotUITests.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MDX989Y6D8;
+				INFOPLIST_FILE = FlowrSpotUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rep.FlowrSpotUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FlowrSpot;
+			};
+			name = Debug;
+		};
+		F631B4B720C6CAFC00129F67 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A1E1CA6CF1C3C23B89F93352 /* Pods-FlowrSpotUITests.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MDX989Y6D8;
+				INFOPLIST_FILE = FlowrSpotUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rep.FlowrSpotUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FlowrSpot;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1134,6 +1220,15 @@
 			buildConfigurations = (
 				37B41994200E06C700173B80 /* Debug */,
 				37B41995200E06C700173B80 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F631B4B520C6CAFC00129F67 /* Build configuration list for PBXNativeTarget "FlowrSpotUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F631B4B620C6CAFC00129F67 /* Debug */,
+				F631B4B720C6CAFC00129F67 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
