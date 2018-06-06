@@ -89,12 +89,12 @@ extension FlowerDetailsHeaderView: ViewLifecycle {
     }
 
     flowerLatinNameLabel.snp.makeConstraints { make in
-      make.left.right.equalToSuperview().inset(UIEdgeInsets(top: 0, left: 80, bottom: 24, right: 80))
+      make.left.right.equalToSuperview().inset(UIEdgeInsets(top: 0, left: 60, bottom: 24, right: 60))
       make.bottom.equalTo(flowerImageView.snp.bottom).offset(-24)
     }
 
     flowerNameLabel.snp.makeConstraints { make in
-      make.left.right.equalToSuperview().inset(UIEdgeInsets(top: 0, left: 104, bottom: 0, right: 104))
+      make.left.right.equalToSuperview().inset(UIEdgeInsets(top: 0, left: 60, bottom: 0, right: 60))
       make.bottom.equalTo(flowerLatinNameLabel.snp.top).offset(-8)
     }
 
