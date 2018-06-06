@@ -2,21 +2,25 @@ struct SightingsWorker {
 
   var downloader = FlowersDownloader()
 
-  func execute(flowerId: Int, success: RestClient.SuccessCompletion<FlowerDetails>, failure: RestClient.FailureCompletion) {
-    downloader.fetchFlowerDetails(flowerId: flowerId, success: { response in
-      guard let flower = FlowerResponseMapper.transform(response: response.flowerResponse) else {
-        failure?(RemoteResourceError.invalidJson)
+  func execute(flowerId: Int, success: RestClient.SuccessCompletion<[Sighting]>, failure: RestClient.FailureCompletion) {
+    downloader.fetchSightings(for: flowerId, success: { response in
 
-        return
+      let sightings = response.map { sightingResponse -> Sighting in
+        let user = User(id: sightingResponse.userResponse.id, fullName: sightingResponse.userResponse.fullName)
+
+        return Sighting(
+          id: sightingResponse.id,
+          name: sightingResponse.name,
+          description: sightingResponse.description,
+          picture: sightingResponse.picture,
+          likesCount: sightingResponse.likesCount,
+          commentsCount: sightingResponse.commentsCount,
+          createdDate: sightingResponse.createdDate,
+          user: user
+        )
       }
 
-      success?(
-        FlowerDetails(
-          features: response.features,
-          description: response.description,
-          flower: flower
-        )
-      )
+      success?(sightings)
     }, failure: failure)
   }
 }

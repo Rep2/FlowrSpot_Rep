@@ -2,6 +2,7 @@ import UIKit
 
 protocol FlowerDetailsDisplayLogic: class {
   func displayFlowerDetails(_ flowerDetails: FlowerDetails)
+  func presentSightings(_ sightings: [Sighting])
   func displayError(_ error: RemoteResourceError)
 }
 
@@ -84,6 +85,10 @@ extension FlowerDetailsViewController: UIStyling {
 extension FlowerDetailsViewController: FlowerDetailsDisplayLogic {
   func displayFlowerDetails(_ flowerDetails: FlowerDetails) {
     headerView.present(flowerDetails: flowerDetails)
+  }
+
+  func presentSightings(_ sightings: [Sighting]) {
+
   }
 
    func displayError(_ error: RemoteResourceError) {

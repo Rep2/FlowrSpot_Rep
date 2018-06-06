@@ -26,7 +26,7 @@ final class FlowersDownloader {
     }, failure: failure)
   }
 
-  func fetchSightings(for flowerId: Int, success: RestClient.SuccessCompletion<[SightingsResponse]>, failure: RestClient.FailureCompletion) {
+  func fetchSightings(for flowerId: Int, success: RestClient.SuccessCompletion<[SightingResponse]>, failure: RestClient.FailureCompletion) {
     RestClient.shared.request(FlowerRequests.flowerSightings(flowerId: flowerId), version: .v1, success: { (json) in
       do {
         let sightingsRootResponse = try SightingsRootResponse.decode(data: json)

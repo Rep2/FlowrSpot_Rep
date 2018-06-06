@@ -86,10 +86,11 @@
 		F63131E220C74FDC0047958D /* FlowerDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63131E120C74FDC0047958D /* FlowerDetails.swift */; };
 		F63131E420C752780047958D /* FlowerDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63131E320C752780047958D /* FlowerDetailsPresenter.swift */; };
 		F63131E620C760E50047958D /* SightingsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63131E520C760E50047958D /* SightingsWorker.swift */; };
-		F63131E820C761390047958D /* SightingsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63131E720C761390047958D /* SightingsResponse.swift */; };
+		F63131E820C761390047958D /* SightingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63131E720C761390047958D /* SightingResponse.swift */; };
 		F631B4B120C6CAFB00129F67 /* FlowrSpotUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F631B4B020C6CAFB00129F67 /* FlowrSpotUITests.swift */; };
 		F631B4BA20C6CD9600129F67 /* Storable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F631B4B920C6CD9600129F67 /* Storable.framework */; };
 		F6F9D5A620C7653700C642A6 /* Storable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F631B4B920C6CD9600129F67 /* Storable.framework */; };
+		F6F9D5A820C8016900C642A6 /* Sighting.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F9D5A720C8016900C642A6 /* Sighting.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -199,11 +200,12 @@
 		F63131E120C74FDC0047958D /* FlowerDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowerDetails.swift; sourceTree = "<group>"; };
 		F63131E320C752780047958D /* FlowerDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowerDetailsPresenter.swift; sourceTree = "<group>"; };
 		F63131E520C760E50047958D /* SightingsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SightingsWorker.swift; sourceTree = "<group>"; };
-		F63131E720C761390047958D /* SightingsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SightingsResponse.swift; sourceTree = "<group>"; };
+		F63131E720C761390047958D /* SightingResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SightingResponse.swift; sourceTree = "<group>"; };
 		F631B4AE20C6CAFB00129F67 /* FlowrSpotUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlowrSpotUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F631B4B020C6CAFB00129F67 /* FlowrSpotUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowrSpotUITests.swift; sourceTree = "<group>"; };
 		F631B4B220C6CAFC00129F67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F631B4B920C6CD9600129F67 /* Storable.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Storable.framework; path = Carthage/Build/iOS/Storable.framework; sourceTree = "<group>"; };
+		F6F9D5A720C8016900C642A6 /* Sighting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sighting.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -373,7 +375,7 @@
 			children = (
 				3787E6482015D3E90080A599 /* FlowerResponse.swift */,
 				3787E6472015D3E90080A599 /* FlowerDetailsResponse.swift */,
-				F63131E720C761390047958D /* SightingsResponse.swift */,
+				F63131E720C761390047958D /* SightingResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -402,6 +404,7 @@
 			children = (
 				3787E6512015D3E90080A599 /* Flower.swift */,
 				F63131E120C74FDC0047958D /* FlowerDetails.swift */,
+				F6F9D5A720C8016900C642A6 /* Sighting.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -966,6 +969,7 @@
 				F63131E420C752780047958D /* FlowerDetailsPresenter.swift in Sources */,
 				3787E6412015D1420080A599 /* Constants.swift in Sources */,
 				F63131E220C74FDC0047958D /* FlowerDetails.swift in Sources */,
+				F6F9D5A820C8016900C642A6 /* Sighting.swift in Sources */,
 				37B4196C200E06C600173B80 /* AppDelegate.swift in Sources */,
 				3787E65E2015EF780080A599 /* ResponseMapper.swift in Sources */,
 				3787E6552015D3E90080A599 /* Version.swift in Sources */,
@@ -976,7 +980,7 @@
 				3787E65A2015D3E90080A599 /* Flower.swift in Sources */,
 				3787E6532015D3E90080A599 /* FlowerDetailsResponse.swift in Sources */,
 				3787E6592015D3E90080A599 /* FlowersDownloader.swift in Sources */,
-				F63131E820C761390047958D /* SightingsResponse.swift in Sources */,
+				F63131E820C761390047958D /* SightingResponse.swift in Sources */,
 				37F6091D2012220200087B53 /* FlowerRequests.swift in Sources */,
 				37603CEE2010977F00FB9F78 /* RowType.swift in Sources */,
 			);
