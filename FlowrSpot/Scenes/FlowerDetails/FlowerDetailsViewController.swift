@@ -29,6 +29,15 @@ class FlowerDetailsViewController: UIViewController {
     return tableView
   }()
 
+  private lazy var emptyView: EmptyView = {
+    let emptyView = EmptyView.autolayoutView()
+
+    emptyView.text = "placeholder_no_content".localized()
+    emptyView.isHidden = true
+
+    return emptyView
+  }()
+
   private lazy var headerViewScrollHandler: HeaderViewScrollHandler = {
     return HeaderViewScrollHandler(headerViewHeight: self.headerViewHeight, headerView: self.headerView)
   }()
@@ -69,6 +78,7 @@ extension FlowerDetailsViewController: UIStyling {
 
     view.addSubview(tableView)
     view.addSubview(headerView)
+    view.addSubview(emptyView)
   }
 
   func setupConstraints() {
@@ -78,6 +88,11 @@ extension FlowerDetailsViewController: UIStyling {
 
     tableView.snp.makeConstraints { (make) in
       make.edges.equalToSuperview()
+    }
+
+    emptyView.snp.makeConstraints { (make) in
+      make.top.equalTo(headerView.snp.bottom)
+      make.leading.trailing.bottom.equalToSuperview()
     }
   }
 }
@@ -89,6 +104,8 @@ extension FlowerDetailsViewController: FlowerDetailsDisplayLogic {
   }
 
   func presentSightings(_ anyTableViewPresentableViewModel: [AnyTableViewPresentableViewModel]) {
+    emptyView.isHidden = !anyTableViewPresentableViewModel.isEmpty
+
     reusableDataSource.present(presentableViewModels: anyTableViewPresentableViewModel, on: tableView)
   }
 
