@@ -1,5 +1,9 @@
 import Foundation
 
+struct SightingsRootResponse: Codable {
+  let sightings: [SightingsResponse]
+}
+
 struct SightingsResponse: Codable {
   let id: Int
   let name: String

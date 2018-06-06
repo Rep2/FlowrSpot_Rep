@@ -26,7 +26,15 @@ final class FlowersDownloader {
     }, failure: failure)
   }
 
-  func fetchSightings(for flowerId: Int, success: RestClient.SuccessCompletion<FlowerDetailsResponse>, failure: RestClient.FailureCompletion) {
-    
+  func fetchSightings(for flowerId: Int, success: RestClient.SuccessCompletion<[SightingsResponse]>, failure: RestClient.FailureCompletion) {
+    RestClient.shared.request(FlowerRequests.flowerSightings(flowerId: flowerId), version: .v1, success: { (json) in
+      do {
+        let sightingsRootResponse = try SightingsRootResponse.decode(data: json)
+
+        success?(sightingsRootResponse.sightings)
+      } catch {
+        failure?(RemoteResourceError.invalidJson)
+      }
+    }, failure: failure)
   }
 }

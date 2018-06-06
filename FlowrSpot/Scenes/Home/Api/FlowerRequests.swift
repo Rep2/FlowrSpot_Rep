@@ -11,6 +11,7 @@ import Alamofire
 enum FlowerRequests: Request {
   case flowersList
   case flowerDetails(flowerid: Int)
+  case flowerSightings(flowerId: Int)
   
   var path: String {
     switch self {
@@ -18,6 +19,8 @@ enum FlowerRequests: Request {
       return "flowers"
     case let .flowerDetails(id):
       return "flowers/\(String(id))"
+    case .flowerSightings(let flowerId):
+      return "flowers/\(String(flowerId))/sightings"
     }
   }
 }
