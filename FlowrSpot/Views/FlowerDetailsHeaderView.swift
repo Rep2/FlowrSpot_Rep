@@ -78,6 +78,8 @@ extension FlowerDetailsHeaderView: ViewLifecycle {
     addSubview(descriptionLabel)
 
     layer.masksToBounds = true
+
+    isUserInteractionEnabled = false
   }
 
   func setupConstraints() {
