@@ -89,6 +89,7 @@
 		F63131E820C761390047958D /* SightingsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63131E720C761390047958D /* SightingsResponse.swift */; };
 		F631B4B120C6CAFB00129F67 /* FlowrSpotUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F631B4B020C6CAFB00129F67 /* FlowrSpotUITests.swift */; };
 		F631B4BA20C6CD9600129F67 /* Storable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F631B4B920C6CD9600129F67 /* Storable.framework */; };
+		F6F9D5A620C7653700C642A6 /* Storable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F631B4B920C6CD9600129F67 /* Storable.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -220,6 +221,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCE15402B8D583BCF3AEFA83 /* Pods_FlowrSpotTests.framework in Frameworks */,
+				F6F9D5A620C7653700C642A6 /* Storable.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1177,6 +1179,10 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T634YNT6FE;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = FlowrSpotTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = povio.FlowrSpotTests;
@@ -1195,6 +1201,10 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T634YNT6FE;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = FlowrSpotTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = povio.FlowrSpotTests;

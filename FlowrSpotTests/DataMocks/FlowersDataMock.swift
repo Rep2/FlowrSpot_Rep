@@ -16,8 +16,9 @@ class FlowersDataMock {
   
   func mockFlowerResponses() -> [FlowerResponse] {
     do {
-      let json = try laodJsonFromFile("flowers")
-      return FlowerResponse.parseArray(json, key: "flowers")
+      let data = try laodJsonFromFile("flowers")
+
+      return try FlowersResponse.decode(data: data).flowers
     }
     catch {
       print(error.localizedDescription)
@@ -27,11 +28,11 @@ class FlowersDataMock {
 }
 
 private extension FlowersDataMock {
-  func laodJsonFromFile(_ file: String) throws -> Any {
+  func laodJsonFromFile(_ file: String) throws -> Data {
     guard let path = Bundle(for: type(of: self)).path(forResource: file, ofType: "json") else { throw RemoteResourceError.generic }
     
     let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-    let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
-    return jsonResult
+
+    return data
   }
 }

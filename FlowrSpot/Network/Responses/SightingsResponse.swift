@@ -11,7 +11,7 @@ struct SightingsResponse: Codable {
   let picture: String
   let likesCount: Int
   let commentsCount: Int
-  let createdDate: Date
+  let createdDate: String
 
   let userResponse: UserResponse
 
@@ -30,4 +30,9 @@ struct SightingsResponse: Codable {
   struct UserResponse: Codable {
     let id: Int
     let fullName: String
+
+    enum CodingKeys: String, CodingKey {
+      case id
+      case fullName = "full_name"
+    }
 }
