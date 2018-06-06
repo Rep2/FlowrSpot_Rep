@@ -25,4 +25,8 @@ final class FlowersDownloader {
       }
     }, failure: failure)
   }
+
+  func fetchSightings(for flowerId: Int, success: RestClient.SuccessCompletion<FlowerDetailsResponse>, failure: RestClient.FailureCompletion) {
+    
+  }
 }
