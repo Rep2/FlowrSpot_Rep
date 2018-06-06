@@ -1,3 +1,4 @@
+import ReusableDataSource
 import UIKit
 
 protocol FlowerDetailsPresentationLogic {
@@ -17,7 +18,11 @@ extension FlowerDetailsPresenter: FlowerDetailsPresentationLogic {
   }
 
   func presentSightings(_ sightings: [Sighting]) {
-    viewController?.presentSightings(sightings)
+     let reusableViewModel = sightings.map { sighting in
+      ReusableViewModel<SightingTableViewCell>(viewModel: sighting).anyPresentable
+    }
+
+    viewController?.presentSightings(reusableViewModel)
   }
 
   func presentError(_ error: RemoteResourceError) {

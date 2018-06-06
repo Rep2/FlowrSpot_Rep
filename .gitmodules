@@ -1,3 +1,6 @@
 [submodule "Carthage/Checkouts/Storable"]
 	path = Carthage/Checkouts/Storable
 	url = https://github.com/Rep2/Storable.git
+[submodule "Carthage/Checkouts/ReusableDataSource"]
+	path = Carthage/Checkouts/ReusableDataSource
+	url = https://github.com/Rep2/ReusableDataSource.git

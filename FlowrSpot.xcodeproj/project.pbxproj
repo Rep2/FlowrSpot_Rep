@@ -91,6 +91,8 @@
 		F631B4BA20C6CD9600129F67 /* Storable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F631B4B920C6CD9600129F67 /* Storable.framework */; };
 		F6F9D5A620C7653700C642A6 /* Storable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F631B4B920C6CD9600129F67 /* Storable.framework */; };
 		F6F9D5A820C8016900C642A6 /* Sighting.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F9D5A720C8016900C642A6 /* Sighting.swift */; };
+		F6F9D5AA20C803ED00C642A6 /* SightingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F9D5A920C803ED00C642A6 /* SightingTableViewCell.swift */; };
+		F6F9D5AC20C8177C00C642A6 /* ReusableDataSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6F9D5AB20C8177C00C642A6 /* ReusableDataSource.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -206,6 +208,8 @@
 		F631B4B220C6CAFC00129F67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F631B4B920C6CD9600129F67 /* Storable.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Storable.framework; path = Carthage/Build/iOS/Storable.framework; sourceTree = "<group>"; };
 		F6F9D5A720C8016900C642A6 /* Sighting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sighting.swift; sourceTree = "<group>"; };
+		F6F9D5A920C803ED00C642A6 /* SightingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SightingTableViewCell.swift; sourceTree = "<group>"; };
+		F6F9D5AB20C8177C00C642A6 /* ReusableDataSource.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReusableDataSource.framework; path = Carthage/Build/iOS/ReusableDataSource.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +219,7 @@
 			files = (
 				0666C4C0111DE138E68DF9F1 /* Pods_FlowrSpot.framework in Frameworks */,
 				F631B4BA20C6CD9600129F67 /* Storable.framework in Frameworks */,
+				F6F9D5AC20C8177C00C642A6 /* ReusableDataSource.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,6 +342,7 @@
 				37DFD3262011E41C001023ED /* SearchView.swift */,
 				373597C7201B2D570000CA57 /* EmptyView.swift */,
 				F63131DB20C7404C0047958D /* FlowerDetailsHeaderView.swift */,
+				F6F9D5A920C803ED00C642A6 /* SightingTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -577,6 +583,7 @@
 		97BDD1CA88FB2F2F86278369 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F6F9D5AB20C8177C00C642A6 /* ReusableDataSource.framework */,
 				F631B4B920C6CD9600129F67 /* Storable.framework */,
 				63205463096CE6FBDF5D1415 /* Pods_FlowrSpot.framework */,
 				9A204BDDF3C1CBB61D85109E /* Pods_FlowrSpotTests.framework */,
@@ -914,10 +921,12 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Storable.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ReusableDataSource.framework",
 			);
 			name = Carthage;
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Storable.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ReusableDataSource.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -964,6 +973,7 @@
 				37F609242012226600087B53 /* FlowersRow.swift in Sources */,
 				37892D80200F38A600BB8259 /* NavigationViewController.swift in Sources */,
 				37DFD32A2011E41C001023ED /* SearchView.swift in Sources */,
+				F6F9D5AA20C803ED00C642A6 /* SightingTableViewCell.swift in Sources */,
 				3787E6522015D3E90080A599 /* RemoteResourceError.swift in Sources */,
 				37DFD3282011E41C001023ED /* HomeHeaderView.swift in Sources */,
 				F63131E420C752780047958D /* FlowerDetailsPresenter.swift in Sources */,

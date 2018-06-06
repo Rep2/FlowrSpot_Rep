@@ -1,8 +1,9 @@
+import ReusableDataSource
 import UIKit
 
 protocol FlowerDetailsDisplayLogic: class {
   func displayFlowerDetails(_ flowerDetails: FlowerDetails)
-  func presentSightings(_ sightings: [Sighting])
+  func presentSightings(_ anyTableViewPresentableViewModel: [AnyTableViewPresentableViewModel])
   func displayError(_ error: RemoteResourceError)
 }
 
@@ -17,17 +18,15 @@ class FlowerDetailsViewController: UIViewController {
 
   let headerViewHeight: CGFloat = 255
 
-  private lazy var collectionView: UICollectionView = {
-    let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).autoLayoutView()
+  private lazy var tableView: UITableView = {
+    let tableView = UITableView(frame: .zero, style: .grouped)
 
-    collectionView.backgroundColor = .white
-    collectionView.keyboardDismissMode = .onDrag
-    collectionView.delegate = self
-    collectionView.dataSource = self
-    collectionView.contentInset = UIEdgeInsets(top: self.headerViewHeight, left: 0, bottom: 0, right: 0)
-    collectionView.register(FlowerCollectionViewCell.self)
+    tableView.backgroundColor = .white
+    tableView.delegate = self
+    tableView.dataSource = self.reusableDataSource
+    tableView.contentInset = UIEdgeInsets(top: self.headerViewHeight, left: 0, bottom: 0, right: 0)
 
-    return collectionView
+    return tableView
   }()
 
   private lazy var headerViewScrollHandler: HeaderViewScrollHandler = {
@@ -35,6 +34,8 @@ class FlowerDetailsViewController: UIViewController {
   }()
 
   let interactor: FlowerDetailsInteractor
+
+  let reusableDataSource = ReusableTableViewDataSource()
 
   init(flower: Flower) {
     self.interactor = FlowerDetailsInteractor()
@@ -66,7 +67,7 @@ extension FlowerDetailsViewController: UIStyling {
     
     title = NSLocalizedString("Flower details", comment: "Flower details screen title")
 
-    view.addSubview(collectionView)
+    view.addSubview(tableView)
     view.addSubview(headerView)
   }
 
@@ -75,7 +76,7 @@ extension FlowerDetailsViewController: UIStyling {
       make.leading.top.trailing.equalToSuperview()
     }
 
-    collectionView.snp.makeConstraints { (make) in
+    tableView.snp.makeConstraints { (make) in
       make.edges.equalToSuperview()
     }
   }
@@ -87,8 +88,8 @@ extension FlowerDetailsViewController: FlowerDetailsDisplayLogic {
     headerView.present(flowerDetails: flowerDetails)
   }
 
-  func presentSightings(_ sightings: [Sighting]) {
-
+  func presentSightings(_ anyTableViewPresentableViewModel: [AnyTableViewPresentableViewModel]) {
+    reusableDataSource.present(presentableViewModels: anyTableViewPresentableViewModel, on: tableView)
   }
 
    func displayError(_ error: RemoteResourceError) {
@@ -98,34 +99,8 @@ extension FlowerDetailsViewController: FlowerDetailsDisplayLogic {
   }
 }
 
-// MARK: - UICollectionView DataSource
-extension FlowerDetailsViewController: UICollectionViewDataSource {
-  func numberOfSections(in collectionView: UICollectionView) -> Int {
-    return 1//flowersDataSource.numberOfSections()
-  }
-
-  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return 320//flowersDataSource.numberOfRows(in: section)
-  }
-
-  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//    guard let row = flowersDataSource.row(at: indexPath) else {
-//      Logger.error("No availible row in dataSource at \(indexPath)")
-//      return UICollectionViewCell()
-//    }
-
-    let cell = collectionView.dequeueReusableCell(FlowerCollectionViewCell.self, at: indexPath)
-
-//    switch row {
-//    case let .flower(entity):
-//      cell.setFlower(entity)
-//    }
-    return cell
-  }
-}
-
-// MARK: - UICollectionView Delegate
-extension FlowerDetailsViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+// MARK: - UITableView Delegate
+extension FlowerDetailsViewController: UITableViewDelegate {
 
 }
 
@@ -139,6 +114,7 @@ extension FlowerDetailsViewController: UIScrollViewDelegate {
 // MARK: - Private Methods
 private extension FlowerDetailsViewController {
   func loadData(flower: Flower) {
-    interactor.fetchFlowerDetails(flowerId: flower.id)
+    interactor.fetchFlowerDetails(for: flower.id)
+    interactor.fetchSightings(for: flower.id)
   }
 }

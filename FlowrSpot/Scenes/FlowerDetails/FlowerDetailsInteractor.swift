@@ -1,7 +1,7 @@
 import Foundation
 
 protocol FlowerDetailsBusinessLogic {
-  func fetchFlowerDetails(flowerId: Int)
+  func fetchFlowerDetails(for flowerId: Int)
   func fetchSightings(for flowerId: Int)
 }
 
@@ -14,7 +14,7 @@ class FlowerDetailsInteractor {
 
 // MARK: - Business Logic
 extension FlowerDetailsInteractor: FlowerDetailsBusinessLogic {
-  func fetchFlowerDetails(flowerId: Int) {
+  func fetchFlowerDetails(for flowerId: Int) {
     flowerDetailsWorker.execute(
       flowerId: flowerId,
       success: { flowerDetails in
