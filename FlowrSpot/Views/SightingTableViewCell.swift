@@ -106,36 +106,38 @@ extension SightingTableViewCell {
 
   private func setupConstraints() {
     nameLabel.snp.makeConstraints { (make) in
-      make.top.left.right.equalToSuperview().inset(UIEdgeInsets(top: 24, left: 24, bottom: 0, right: 24))
+      make.top.left.right.equalToSuperview().inset(UIEdgeInsets(top: 16, left: 24, bottom: 0, right: 24))
     }
 
     userNameLabel.snp.makeConstraints { (make) in
       make.left.right.equalToSuperview().inset(UIEdgeInsets(top: 24, left: 24, bottom: 0, right: 24))
-      make.top.equalTo(nameLabel.snp.bottom).inset(UIEdgeInsets(top: 8, left: 0, bottom: 0, right: 0))
+      make.top.equalTo(nameLabel.snp.bottom).offset(4)
     }
 
     descriptionLabel.snp.makeConstraints { (make) in
       make.left.right.equalToSuperview().inset(UIEdgeInsets(top: 24, left: 24, bottom: 0, right: 24))
-      make.top.equalTo(userNameLabel.snp.bottom).inset(UIEdgeInsets(top: 24, left: 0, bottom: 0, right: 0))
+      make.top.equalTo(userNameLabel.snp.bottom).offset(16)
     }
 
     commentsImageView.snp.makeConstraints { (make) in
-      make.left.bottom.equalToSuperview().inset(UIEdgeInsets(top: 24, left: 24, bottom: 0, right: 24))
-      make.top.equalTo(descriptionLabel).inset(UIEdgeInsets(top: 24, left: 24, bottom: 0, right: 24))
+      make.left.bottom.equalToSuperview().inset(UIEdgeInsets(top: 0, left: 24, bottom: 12, right: 24))
+      make.top.equalTo(descriptionLabel.snp.bottom).offset(12)
       make.height.width.equalTo(24)
     }
 
     commentsCountLabel.snp.makeConstraints { (make) in
-      make.left.centerY.equalTo(commentsImageView).inset(UIEdgeInsets(top: 24, left: 8, bottom: 0, right: 24))
+      make.left.equalTo(commentsImageView.snp.right).offset(8)
+      make.centerY.equalTo(commentsImageView)
     }
 
     favouritesImageView.snp.makeConstraints { (make) in
+      make.left.equalTo(commentsCountLabel.snp.right).offset(8)
       make.centerY.equalTo(commentsImageView)
-      make.left.equalTo(commentsCountLabel).inset(UIEdgeInsets(top: 24, left: 24, bottom: 0, right: 24))
     }
 
     favouritesCountLabel.snp.makeConstraints { (make) in
-      make.left.centerY.equalTo(favouritesImageView).inset(UIEdgeInsets(top: 24, left: 8, bottom: 0, right: 24))
+      make.left.equalTo(favouritesImageView.snp.right).offset(8)
+      make.centerY.equalTo(commentsImageView)
     }
   }
 }

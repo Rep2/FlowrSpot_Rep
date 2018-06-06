@@ -50,11 +50,17 @@ class FlowerDetailsHeaderView: UIView {
     return label
   }()
 
+  private let imageViewHeight: CGFloat = 280
+
   func present(flowerDetails: FlowerDetails) {
     flowerNameLabel.text = flowerDetails.flower.name
     flowerLatinNameLabel.text = flowerDetails.flower.latinName
     flowerImageView.kf.setImage(with: URL(string: flowerDetails.flower.url))
     descriptionLabel.text = flowerDetails.description
+  }
+
+  var height: CGFloat {
+    return imageViewHeight + 2 * 24 + (descriptionLabel.text?.height(withConstrainedWidth: bounds.width - 2 * 24, font: .custom(type: .regular, size: 13)) ?? 0)
   }
 }
 
@@ -70,12 +76,14 @@ extension FlowerDetailsHeaderView: ViewLifecycle {
     addSubview(flowerNameLabel)
     addSubview(flowerLatinNameLabel)
     addSubview(descriptionLabel)
+
+    layer.masksToBounds = true
   }
 
   func setupConstraints() {
     flowerImageView.snp.makeConstraints { make in
       make.left.right.top.equalToSuperview()
-      make.height.equalTo(281)
+      make.height.equalTo(imageViewHeight)
     }
 
     flowerLatinNameLabel.snp.makeConstraints { make in

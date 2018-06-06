@@ -16,15 +16,14 @@ class FlowerDetailsViewController: UIViewController {
     return headerView
   }()
 
-  let headerViewHeight: CGFloat = 255
+  let headerViewHeight: CGFloat = 400
 
   private lazy var tableView: UITableView = {
     let tableView = UITableView(frame: .zero, style: .grouped)
 
     tableView.backgroundColor = .white
-    tableView.delegate = self
     tableView.dataSource = self.reusableDataSource
-    tableView.contentInset = UIEdgeInsets(top: self.headerViewHeight, left: 0, bottom: 0, right: 0)
+    tableView.delegate = self
 
     return tableView
   }()
@@ -97,10 +96,22 @@ extension FlowerDetailsViewController: UIStyling {
   }
 }
 
+// MARK: - UITableView Delegate
+extension FlowerDetailsViewController: UITableViewDelegate {
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    tableView.deselectRow(at: indexPath, animated: true)
+  }
+}
+
 // MARK: - Display Logic
 extension FlowerDetailsViewController: FlowerDetailsDisplayLogic {
   func displayFlowerDetails(_ flowerDetails: FlowerDetails) {
     headerView.present(flowerDetails: flowerDetails)
+
+    let headerViewHeight = headerView.height - 40
+
+    headerViewScrollHandler.headerViewHeight = headerViewHeight
+    tableView.contentInset = UIEdgeInsets(top: headerViewHeight, left: 0, bottom: 0, right: 0)
   }
 
   func presentSightings(_ anyTableViewPresentableViewModel: [AnyTableViewPresentableViewModel]) {
@@ -114,11 +125,6 @@ extension FlowerDetailsViewController: FlowerDetailsDisplayLogic {
     alert.addAction(UIAlertAction(title: "general_ok".localized(), style: .cancel, handler: nil))
     present(alert, animated: true, completion: nil)
   }
-}
-
-// MARK: - UITableView Delegate
-extension FlowerDetailsViewController: UITableViewDelegate {
-
 }
 
 // MARK: - UIScrollView Delegate

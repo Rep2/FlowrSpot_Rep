@@ -1,7 +1,7 @@
 import UIKit
 
 class HeaderViewScrollHandler {
-  let headerViewHeight: CGFloat
+  var headerViewHeight: CGFloat
   weak var headerView: UIView?
 
   init(headerViewHeight: CGFloat, headerView: UIView) {

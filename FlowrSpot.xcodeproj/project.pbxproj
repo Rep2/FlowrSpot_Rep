@@ -93,6 +93,7 @@
 		F6F9D5A820C8016900C642A6 /* Sighting.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F9D5A720C8016900C642A6 /* Sighting.swift */; };
 		F6F9D5AA20C803ED00C642A6 /* SightingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F9D5A920C803ED00C642A6 /* SightingTableViewCell.swift */; };
 		F6F9D5AC20C8177C00C642A6 /* ReusableDataSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6F9D5AB20C8177C00C642A6 /* ReusableDataSource.framework */; };
+		F6F9D5AE20C822B800C642A6 /* String+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F9D5AD20C822B800C642A6 /* String+Size.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -210,6 +211,7 @@
 		F6F9D5A720C8016900C642A6 /* Sighting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sighting.swift; sourceTree = "<group>"; };
 		F6F9D5A920C803ED00C642A6 /* SightingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SightingTableViewCell.swift; sourceTree = "<group>"; };
 		F6F9D5AB20C8177C00C642A6 /* ReusableDataSource.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReusableDataSource.framework; path = Carthage/Build/iOS/ReusableDataSource.framework; sourceTree = "<group>"; };
+		F6F9D5AD20C822B800C642A6 /* String+Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Size.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -350,6 +352,7 @@
 		37603CE72010970F00FB9F78 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				F6F9D5AD20C822B800C642A6 /* String+Size.swift */,
 				37DFD32F2011E458001023ED /* Array+Extra.swift */,
 				37088C652036E47E004C578F /* String+extra.swift */,
 			);
@@ -955,6 +958,7 @@
 				37F6091C2012220200087B53 /* HomeRouter.swift in Sources */,
 				37DFD33A2011E48D001023ED /* UICollectionView+Extra.swift in Sources */,
 				37DFD33C2011E48D001023ED /* UIColor+Extra.swift in Sources */,
+				F6F9D5AE20C822B800C642A6 /* String+Size.swift in Sources */,
 				37DFD3392011E48D001023ED /* UIFont+Extra.swift in Sources */,
 				37603CEC2010977100FB9F78 /* SectionType.swift in Sources */,
 				F63131DE20C746470047958D /* HeaderViewScrollHandler.swift in Sources */,
