@@ -72,7 +72,6 @@ extension FlowerDetailsViewController: UIStyling {
   func setupConstraints() {
     headerView.snp.makeConstraints { (make) in
       make.leading.top.trailing.equalToSuperview()
-      make.height.equalTo(headerViewHeight)
     }
 
     collectionView.snp.makeConstraints { (make) in
@@ -84,9 +83,7 @@ extension FlowerDetailsViewController: UIStyling {
 // MARK: - Display Logic
 extension FlowerDetailsViewController: FlowerDetailsDisplayLogic {
   func displayFlowerDetails(_ flowerDetails: FlowerDetails) {
-//    flowersDataSource.update(flowers: flowers)
-//    collectionView.reloadData()
-//    emptyView.isHidden = true
+    headerView.present(flowerDetails: flowerDetails)
   }
 
    func displayError(_ error: RemoteResourceError) {
